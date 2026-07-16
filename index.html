@@ -148,7 +148,7 @@ section{padding:7rem 4rem;}
 .reviews-section{background:var(--light);padding:7rem 4rem;}
 .reviews-inner{max-width:1300px;margin:0 auto;}
 .reviews-section .section-title{color:var(--black);}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+.reviews-slider{display:flex;gap:1.5rem;margin-top:3rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:1.5rem;cursor:grab;}.reviews-slider::-webkit-scrollbar{height:4px;}.reviews-slider::-webkit-scrollbar-track{background:#eee;}.reviews-slider::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}.reviews-slider.grabbing{cursor:grabbing;}
 .rev-card{background:var(--white);padding:2.5rem;border:1px solid rgba(255,255,255,.05);transition:border-color .3s;}
 .rev-card:hover{border-color:rgba(201,169,110,.3);}
 .rev-stars{color:var(--gold);font-size:.9rem;margin-bottom:1rem;letter-spacing:.1em;}
@@ -520,7 +520,7 @@ footer{background:var(--white);border-top:1px solid rgba(255,255,255,.05);paddin
       <h2 class="section-title">고객 경험 후기</h2>
       <div class="section-divider"></div>
     </div>
-    <div class="reviews-grid reveal">
+    <div class="reviews-slider reveal">
       <div class="rev-card">
         <div class="rev-stars">★★★★★</div>
         <p class="rev-text">"상담부터 수술까지 원장님이 직접 진행해 주셔서 너무 안심됐어요. 결과도 기대 이상으로 만족스럽습니다. 주변 지인들에게 적극 추천하고 있어요."</p>
@@ -546,7 +546,55 @@ footer{background:var(--white);border-top:1px solid rgba(255,255,255,.05);paddin
         </div>
       </div>
     </div>
-  </div>
+  
+      <div class="rev-card">
+        <div class="rev-stars"></div>
+        <p class="rev-text">"종아리 라인이 고민이었는데 수술 후 완전히 달라졌어요. 옷 입는게 즐거워졌고 자신감도 많이 생겼습니다."</p>
+        <div class="rev-author">
+          <div class="rev-avatar">🌷</div>
+          <div><p class="rev-name">최O민  20대</p><p class="rev-proc">종아리 슬림팩</p></div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars"></div>
+        <p class="rev-text">"PRP 시술 후 피부가 확실히 달라졌어요. 회복도 빠르고 자연스러운 결과에 너무 만족합니다."</p>
+        <div class="rev-author">
+          <div class="rev-avatar">💎</div>
+          <div><p class="rev-name">정O현  40대</p><p class="rev-proc">PRP 재생 솔루션</p></div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars"></div>
+        <p class="rev-text">"허리 라인이 확실히 잡혔어요. 원장님이 체형 분석을 꼼꼼하게 해주셔서 결과가 너무 자연스럽고 예뻐요."</p>
+        <div class="rev-author">
+          <div class="rev-avatar">🌟</div>
+          <div><p class="rev-name">윤O서  30대</p><p class="rev-proc">허리파기술</p></div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars"></div>
+        <p class="rev-text">"골반 필러 후 실루엣이 완전히 달라졌어요. 시술 시간도 짧고 회복도 빨라서 좋았습니다."</p>
+        <div class="rev-author">
+          <div class="rev-avatar">🌺</div>
+          <div><p class="rev-name">한O아  20대</p><p class="rev-proc">골반 필러</p></div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars"></div>
+        <p class="rev-text">"팔 라인이 콤플렉스였는데 수술 후 반소매 옷을 자신있게 입게 됐어요. 원장님이 너무 친절하셨어요."</p>
+        <div class="rev-author">
+          <div class="rev-avatar">🦋</div>
+          <div><p class="rev-name">오O진  30대</p><p class="rev-proc">팔 지방흡입</p></div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-stars"></div>
+        <p class="rev-text">"가슴 지방이식 후 자연스러운 볼륨이 생겼어요. 인위적이지 않고 정말 자연스러워서 너무 만족합니다."</p>
+        <div class="rev-author">
+          <div class="rev-avatar">🌙</div>
+          <div><p class="rev-name">송O빈  20대</p><p class="rev-proc">가슴 지방이식</p></div>
+        </div>
+      </div></div>
 </section>
 
 <!-- FACILITY -->
@@ -727,6 +775,33 @@ window.addEventListener('scroll',()=>{
   nav.classList.toggle('scrolled',window.scrollY>50);
 });
 
+// 후기 슬라이더 드래그
+const slider = document.querySelector('.reviews-slider');
+if(slider){
+  let isDown=false,startX,scrollLeft;
+  slider.addEventListener('mousedown',e=>{isDown=true;slider.classList.add('grabbing');startX=e.pageX-slider.offsetLeft;scrollLeft=slider.scrollLeft;});
+  slider.addEventListener('mouseleave',()=>{isDown=false;slider.classList.remove('grabbing');});
+  slider.addEventListener('mouseup',()=>{isDown=false;slider.classList.remove('grabbing');});
+  slider.addEventListener('mousemove',e=>{if(!isDown)return;e.preventDefault();const x=e.pageX-slider.offsetLeft;slider.scrollLeft=scrollLeft-(x-startX)*2;});
+}
+// 후기 슬라이더 드래그
+const slider = document.querySelector('.reviews-slider');
+if(slider){
+  let isDown=false,startX,scrollLeft;
+  slider.addEventListener('mousedown',e=>{isDown=true;slider.classList.add('grabbing');startX=e.pageX-slider.offsetLeft;scrollLeft=slider.scrollLeft;});
+  slider.addEventListener('mouseleave',()=>{isDown=false;slider.classList.remove('grabbing');});
+  slider.addEventListener('mouseup',()=>{isDown=false;slider.classList.remove('grabbing');});
+  slider.addEventListener('mousemove',e=>{if(!isDown)return;e.preventDefault();const x=e.pageX-slider.offsetLeft;slider.scrollLeft=scrollLeft-(x-startX)*2;});
+}
+// 후기 슬라이더 드래그
+const slider = document.querySelector('.reviews-slider');
+if(slider){
+  let isDown=false,startX,scrollLeft;
+  slider.addEventListener('mousedown',e=>{isDown=true;slider.classList.add('grabbing');startX=e.pageX-slider.offsetLeft;scrollLeft=slider.scrollLeft;});
+  slider.addEventListener('mouseleave',()=>{isDown=false;slider.classList.remove('grabbing');});
+  slider.addEventListener('mouseup',()=>{isDown=false;slider.classList.remove('grabbing');});
+  slider.addEventListener('mousemove',e=>{if(!isDown)return;e.preventDefault();const x=e.pageX-slider.offsetLeft;slider.scrollLeft=scrollLeft-(x-startX)*2;});
+}
 // Scroll reveal
 const revealEls=document.querySelectorAll('.reveal');
 const obs=new IntersectionObserver((entries)=>{
