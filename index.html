@@ -255,9 +255,6 @@ footer{background:var(--white);border-top:1px solid rgba(255,255,255,.05);paddin
 </head>
 <body>
 
-<!-- LOADER -->
-<div id="loader"><p class="loader-text">CLINIC</p></div>
-
 <!-- NAV -->
 <nav id="navbar">
   <a href="#" class="nav-logo">CLINIC<span>&</span>VIEW</a>
@@ -762,10 +759,7 @@ footer{background:var(--white);border-top:1px solid rgba(255,255,255,.05);paddin
 
 <script>
 // Loader
-setTimeout(()=>{
-  const loader=document.getElementById('loader');
-  if(loader){loader.classList.add('hide');setTimeout(()=>loader.remove(),800);}
-},1500);
+
 
 // Nav scroll
 window.addEventListener('scroll',()=>{
