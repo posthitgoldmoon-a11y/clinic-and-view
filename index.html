@@ -251,6 +251,50 @@ footer{background:#1B2340;border-top:1px solid rgba(201,149,110,.2);padding:4rem
   .fac-item:first-child{grid-row:span 1;}
   .form-row{grid-template-columns:1fr;}
 }
+
+.notice-title em{display:block;font-family:var(--font-en);font-size:.65rem;color:var(--gold);letter-spacing:.35em;font-style:normal;font-weight:400;margin-bottom:.3rem;}
+.notice-title{font-family:var(--font-en);font-size:1.1rem;letter-spacing:.15em;font-weight:500;color:var(--white);margin-bottom:1.5rem;padding-bottom:.8rem;border-bottom:1px solid rgba(201,149,110,.3);}
+
+/* 슬라이더 강제 가로배열 */
+.reviews-slider{
+  display:flex !important;
+  flex-direction:row !important;
+  flex-wrap:nowrap !important;
+  overflow-x:scroll !important;
+  gap:1.5rem !important;
+  margin-top:3rem;
+  padding-bottom:1.5rem;
+  -webkit-overflow-scrolling:touch;
+  cursor:grab;
+}
+.rev-card{
+  min-width:300px !important;
+  max-width:300px !important;
+  flex:0 0 300px !important;
+  width:300px !important;
+}
+
+/* 모바일 최적화 */
+@media(max-width:768px){
+  nav{padding:0 1.2rem;}
+  .hero-content{padding:0 1.5rem;}
+  .hero-title{font-size:2.2rem !important;}
+  .hero-sub{font-size:.85rem;}
+  .hero-btns{flex-direction:column;gap:.8rem;}
+  section{padding:4rem 1.5rem !important;}
+  .section-title{font-size:1.8rem;}
+  .why-grid{grid-template-columns:1fr !important;}
+  .why-card{padding:2rem 1.5rem;}
+  .programs-grid{grid-template-columns:1fr !important;}
+  .events-grid{grid-template-columns:1fr 1fr !important;}
+  .prog-card-img{height:240px;}
+  .rev-card{min-width:260px !important;max-width:260px !important;flex:0 0 260px !important;}
+  .contact-inner{grid-template-columns:1fr !important;}
+  .footer-top{grid-template-columns:1fr !important;}
+  .facility-gallery{grid-template-columns:1fr !important;}
+  .notice-inner{grid-template-columns:1fr !important;}
+  .floating-btns{bottom:1rem;right:1rem;}
+}
 </style>
 </head>
 <body>
@@ -680,7 +724,7 @@ footer{background:#1B2340;border-top:1px solid rgba(201,149,110,.2);padding:4rem
   <div class="notice-inner">
     <div class="notice-block reveal">
       <div class="notice-header">
-        <h3>공지사항</h3>
+        <h3 class="notice-title"><em>NOTICE</em>공지사항</h3>
         <a href="#" class="more">더보기 →</a>
       </div>
       <ul class="notice-list">
@@ -692,7 +736,7 @@ footer{background:#1B2340;border-top:1px solid rgba(201,149,110,.2);padding:4rem
     </div>
     <div class="notice-block reveal">
       <div class="notice-header">
-        <h3>온라인 문의</h3>
+        <h3 class="notice-title"><em>INQUIRY</em>온라인 문의</h3>
         <a href="#" class="more">더보기 →</a>
       </div>
       <ul class="notice-list">
