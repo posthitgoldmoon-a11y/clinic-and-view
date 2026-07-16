@@ -237,7 +237,7 @@ footer{background:var(--white);border-top:1px solid rgba(255,255,255,.05);paddin
   .why-inner,.contact-inner{grid-template-columns:1fr;}
   .programs-grid{grid-template-columns:1fr 1fr;}
   .events-grid{grid-template-columns:1fr 1fr;}
-  .reviews-grid{grid-template-columns:1fr 1fr;}
+  .reviews-slider-DISABLED{grid-template-columns:1fr 1fr;}
   .footer-top{grid-template-columns:1fr 1fr;}
   .hero-stats{display:none;}
   .hero-content{padding:0 2rem;}
@@ -245,7 +245,7 @@ footer{background:var(--white);border-top:1px solid rgba(255,255,255,.05);paddin
 @media(max-width:600px){
   .hero-title{font-size:2.5rem;}
   .hero-btns{flex-direction:column;}
-  .programs-grid,.events-grid{grid-template-columns:1fr;}.reviews-slider{flex-direction:column;}
+  .programs-grid,.events-grid{grid-template-columns:1fr;}
   .notice-inner{grid-template-columns:1fr;}
   .facility-gallery{grid-template-columns:1fr;grid-template-rows:auto;}
   .fac-item:first-child{grid-row:span 1;}
@@ -769,6 +769,36 @@ window.addEventListener('scroll',()=>{
 
 // 후기 슬라이더 드래그
 const slider = document.querySelector('.reviews-slider');
+
+  let autoSlide = setInterval(()=>{
+    if(!slider) return;
+    const card = slider.querySelector('.rev-card');
+    if(!card) return;
+    const cardWidth = card.offsetWidth + 24;
+    const maxScroll = slider.scrollWidth - slider.clientWidth;
+    if(slider.scrollLeft >= maxScroll - 10){
+      slider.scrollTo({left:0, behavior:'smooth'});
+    } else {
+      slider.scrollBy({left:cardWidth, behavior:'smooth'});
+    }
+  }, 3000);
+
+  slider.addEventListener('mouseenter', ()=> clearInterval(autoSlide));
+  slider.addEventListener('mouseleave', ()=>{
+    autoSlide = setInterval(()=>{
+      if(!slider) return;
+      const card = slider.querySelector('.rev-card');
+      if(!card) return;
+      const cardWidth = card.offsetWidth + 24;
+      const maxScroll = slider.scrollWidth - slider.clientWidth;
+      if(slider.scrollLeft >= maxScroll - 10){
+        slider.scrollTo({left:0, behavior:'smooth'});
+      } else {
+        slider.scrollBy({left:cardWidth, behavior:'smooth'});
+      }
+    }, 3000);
+  });
+
 if(slider){
   let isDown=false,startX,scrollLeft;
   slider.addEventListener('mousedown',e=>{isDown=true;slider.classList.add('grabbing');startX=e.pageX-slider.offsetLeft;scrollLeft=slider.scrollLeft;});
@@ -778,6 +808,36 @@ if(slider){
 }
 // 후기 슬라이더 드래그
 const slider = document.querySelector('.reviews-slider');
+
+  let autoSlide = setInterval(()=>{
+    if(!slider) return;
+    const card = slider.querySelector('.rev-card');
+    if(!card) return;
+    const cardWidth = card.offsetWidth + 24;
+    const maxScroll = slider.scrollWidth - slider.clientWidth;
+    if(slider.scrollLeft >= maxScroll - 10){
+      slider.scrollTo({left:0, behavior:'smooth'});
+    } else {
+      slider.scrollBy({left:cardWidth, behavior:'smooth'});
+    }
+  }, 3000);
+
+  slider.addEventListener('mouseenter', ()=> clearInterval(autoSlide));
+  slider.addEventListener('mouseleave', ()=>{
+    autoSlide = setInterval(()=>{
+      if(!slider) return;
+      const card = slider.querySelector('.rev-card');
+      if(!card) return;
+      const cardWidth = card.offsetWidth + 24;
+      const maxScroll = slider.scrollWidth - slider.clientWidth;
+      if(slider.scrollLeft >= maxScroll - 10){
+        slider.scrollTo({left:0, behavior:'smooth'});
+      } else {
+        slider.scrollBy({left:cardWidth, behavior:'smooth'});
+      }
+    }, 3000);
+  });
+
 if(slider){
   let isDown=false,startX,scrollLeft;
   slider.addEventListener('mousedown',e=>{isDown=true;slider.classList.add('grabbing');startX=e.pageX-slider.offsetLeft;scrollLeft=slider.scrollLeft;});
@@ -787,6 +847,36 @@ if(slider){
 }
 // 후기 슬라이더 드래그
 const slider = document.querySelector('.reviews-slider');
+
+  let autoSlide = setInterval(()=>{
+    if(!slider) return;
+    const card = slider.querySelector('.rev-card');
+    if(!card) return;
+    const cardWidth = card.offsetWidth + 24;
+    const maxScroll = slider.scrollWidth - slider.clientWidth;
+    if(slider.scrollLeft >= maxScroll - 10){
+      slider.scrollTo({left:0, behavior:'smooth'});
+    } else {
+      slider.scrollBy({left:cardWidth, behavior:'smooth'});
+    }
+  }, 3000);
+
+  slider.addEventListener('mouseenter', ()=> clearInterval(autoSlide));
+  slider.addEventListener('mouseleave', ()=>{
+    autoSlide = setInterval(()=>{
+      if(!slider) return;
+      const card = slider.querySelector('.rev-card');
+      if(!card) return;
+      const cardWidth = card.offsetWidth + 24;
+      const maxScroll = slider.scrollWidth - slider.clientWidth;
+      if(slider.scrollLeft >= maxScroll - 10){
+        slider.scrollTo({left:0, behavior:'smooth'});
+      } else {
+        slider.scrollBy({left:cardWidth, behavior:'smooth'});
+      }
+    }, 3000);
+  });
+
 if(slider){
   let isDown=false,startX,scrollLeft;
   slider.addEventListener('mousedown',e=>{isDown=true;slider.classList.add('grabbing');startX=e.pageX-slider.offsetLeft;scrollLeft=slider.scrollLeft;});
