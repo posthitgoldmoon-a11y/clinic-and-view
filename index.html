@@ -136,9 +136,21 @@ section{padding:7rem 4rem;}
 .prog-tabs{display:flex;gap:.5rem;}
 .prog-tab{padding:.5rem 1.4rem;font-size:.75rem;letter-spacing:.15em;border:1px solid rgba(201,149,110,.5);background:transparent;color:rgba(201,149,110,.9);cursor:pointer;transition:all .3s;font-family:var(--font-kr);}
 .prog-tab.active,.prog-tab:hover{border-color:var(--gold);background:var(--gold);color:var(--black);}
+.prog-tab[data-type="hot"].active,.prog-tab[data-type="hot"]:hover{background:linear-gradient(90deg,#FF6B6B,#FF8E53);border-color:#FF6B6B;color:#fff;}
+.prog-tab[data-type="lipo"].active,.prog-tab[data-type="lipo"]:hover{background:linear-gradient(90deg,#4FACFE,#00F2FE);border-color:#4FACFE;color:#fff;}
+.prog-tab[data-type="fat"].active,.prog-tab[data-type="fat"]:hover{background:linear-gradient(90deg,#A18CD1,#FBC2EB);border-color:#A18CD1;color:#fff;}
+.prog-tab[data-type="body"].active,.prog-tab[data-type="body"]:hover{background:linear-gradient(90deg,#43E97B,#38F9D7);border-color:#43E97B;color:#1a3a2a;}
 .programs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
 .prog-card{position:relative;overflow:hidden;cursor:pointer;}
 .prog-card-img{width:100%;height:320px;object-fit:cover;display:block;transition:transform .6s ease;background:linear-gradient(135deg,#e8e0d4,#d4c9b0);}
+.prog-card.type-hot .prog-card-img{background:linear-gradient(135deg,#FF6B6B,#FF8E53);}
+.prog-card.type-lipo .prog-card-img{background:linear-gradient(135deg,#4FACFE,#00F2FE);}
+.prog-card.type-fat .prog-card-img{background:linear-gradient(135deg,#A18CD1,#FBC2EB);}
+.prog-card.type-body .prog-card-img{background:linear-gradient(135deg,#43E97B,#38F9D7);}
+.prog-badge.badge-hot{background:linear-gradient(90deg,#FF6B6B,#FF8E53);color:#fff;}
+.prog-badge.badge-lipo{background:linear-gradient(90deg,#4FACFE,#00F2FE);color:#fff;}
+.prog-badge.badge-fat{background:linear-gradient(90deg,#A18CD1,#FBC2EB);color:#fff;}
+.prog-badge.badge-body{background:linear-gradient(90deg,#43E97B,#38F9D7);color:#1a3a2a;}
 .prog-card:hover .prog-card-img{transform:scale(1.05);}
 .prog-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.3) 60%,transparent 100%);}
 .prog-card-body{position:absolute;bottom:0;left:0;right:0;padding:2rem;transform:translateY(6px);transition:transform .3s;}
