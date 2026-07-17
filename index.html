@@ -15,9 +15,9 @@
 }
 html{scroll-behavior:smooth;}
 body{font-family:var(--font-kr);background:var(--white);color:var(--black);overflow-x:hidden;}
-#loader{position:fixed;inset:0;background:var(--white);z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity .8s ease;}
-#loader.hide{opacity:0;pointer-events:none;}
-.loader-text{font-family:var(--font-en);font-size:2rem;color:var(--gold);letter-spacing:.4em;animation:pulse 1.5s ease-in-out infinite;}
+
+
+
 @keyframes pulse{0%,100%{opacity:.3;}50%{opacity:1;}}
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 4rem;height:80px;display:flex;align-items:center;justify-content:space-between;transition:all .4s ease;}
 nav.scrolled{background:rgba(27,35,64,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,169,110,.25);}
@@ -400,7 +400,7 @@ section{padding:4rem 1.5rem !important;}
 </style>
 </head>
 <body>
-<div id="loader"><span class="loader-text">C & V</span></div>
+
 <nav id="navbar">
   <a href="#" class="nav-logo">CLINIC<span>&</span>VIEW</a>
   <ul class="nav-menu">
@@ -727,7 +727,7 @@ section{padding:4rem 1.5rem !important;}
   <button class="float-btn float-top" title="맨 위로" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 </div>
 <script>
-window.addEventListener('load',function(){setTimeout(function(){document.getElementById('loader').classList.add('hide');},600);});
+window.addEventListener('load',function(){});
 window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);});
 
 function showStem(idx) {
