@@ -514,17 +514,17 @@ footer{background:#1B2340;border-top:1px solid rgba(201,149,110,.2);padding:4rem
     <button class="stem-tab" onclick="showStem(2)">리쥬란 4CC</button>
     <button class="stem-tab" onclick="showStem(3)">PRP</button>
   </div>
-  <div class="stem-panel active" id="stem-0"><div class="stem-panel-content" style="background:linear-gradient(135deg,rgba(201,169,110,.15),rgba(201,169,110,.05));height:360px;border-radius:4px;display:flex;align-items:center;justify-content:center;padding:2rem;"><div style="text-align:center;color:rgba(255,255,255,.8);"><div style="font-size:3rem;margin-bottom:1rem;">🧬</div><p style="font-size:.9rem;line-height:1.8;">자가 줄기세포 추출<br>피부 탄력 개선<br>거부 반응 없음</p></div></div></div>
-  <div class="stem-panel" id="stem-1"><div class="stem-panel-content" style="background:linear-gradient(135deg,rgba(67,233,123,.15),rgba(67,233,123,.05));height:360px;border-radius:4px;display:flex;align-items:center;justify-content:center;padding:2rem;"><div style="text-align:center;color:rgba(255,255,255,.8);"><div style="font-size:3rem;margin-bottom:1rem;">🔬</div><p style="font-size:.9rem;line-height:1.8;">조직 재생 촉진<br>염증 억제<br>자연스러운 볼륨 회복</p></div></div></div>
-  <div class="stem-panel" id="stem-2"><div class="stem-panel-content" style="background:linear-gradient(135deg,rgba(79,172,254,.15),rgba(79,172,254,.05));height:360px;border-radius:4px;display:flex;align-items:center;justify-content:center;padding:2rem;"><div style="text-align:center;color:rgba(255,255,255,.8);"><div style="font-size:3rem;margin-bottom:1rem;">💊</div><p style="font-size:.9rem;line-height:1.8;">고농도 PDRN 4CC<br>피부 탄력 집중 개선<br>즉시 일상 복귀 가능</p></div></div></div>
-  <div class="stem-panel" id="stem-3"><div class="stem-panel-content" style="background:linear-gradient(135deg,rgba(255,101,132,.15),rgba(255,101,132,.05));height:360px;border-radius:4px;display:flex;align-items:center;justify-content:center;padding:2rem;"><div style="text-align:center;color:rgba(255,255,255,.8);"><div style="font-size:3rem;margin-bottom:1rem;">🩸</div><p style="font-size:.9rem;line-height:1.8;">자가혈 100% 활용<br>성장인자 집중 공급<br>회복 속도 2배 향상</p></div></div></div>
+  <div class="stem-panel active" id="stem-0"><img src="img/1212.jpg" style="width:100%;height:360px;object-fit:cover;border-radius:4px;display:block;"></div>
+  <div class="stem-panel" id="stem-1"><img src="img/2323.jpg" style="width:100%;height:360px;object-fit:cover;border-radius:4px;display:block;"></div>
+  <div class="stem-panel" id="stem-2"><img src="img/3434.jpg" style="width:100%;height:360px;object-fit:cover;border-radius:4px;display:block;"></div>
+  <div class="stem-panel" id="stem-3"><img src="img/4545.jpg" style="width:100%;height:360px;object-fit:cover;border-radius:4px;display:block;"></div>
 </div>
     <div class="stem-info">
       <span class="section-label">SPECIAL TREATMENT</span>
-      <h2 class="section-title" id="stemTitle">줄기세포 JUV<br>재생 프로그램</h2>
+      <h2 class="section-title" id="stemTitle" style="color:var(--white);">줄기세포 JUV<br>재생 프로그램</h2>
       <div class="section-divider"></div>
-      <p class="stem-desc" id="stemDesc">자신의 지방 조직에서 추출한 줄기세포를 활용하는 차세대 재생 프로그램입니다. 단순한 볼륨 회복을 넘어, 세포 수준에서의 진정한 재생을 경험하세요.</p>
-      <ul class="stem-points" id="stemPoints">
+      <p class="stem-desc" id="stemDesc" style="color:rgba(255,255,255,.75);">자신의 지방 조직에서 추출한 줄기세포를 활용하는 차세대 재생 프로그램입니다. 단순한 볼륨 회복을 넘어, 세포 수준에서의 진정한 재생을 경험하세요.</p>
+      <ul class="stem-points" id="stemPoints" style="color:rgba(255,255,255,.75);">
         <li>자가 줄기세포 추출 — 거부 반응 없음</li>
         <li>지방이식 동시 진행 가능</li>
         <li>피부 탄력 및 윤기 개선</li>
@@ -571,6 +571,7 @@ footer{background:#1B2340;border-top:1px solid rgba(201,149,110,.2);padding:4rem
       <h2 class="section-title">오시는 길</h2>
       <div class="section-divider"></div>
       
+  <div class="location-map" style="padding:0;overflow:hidden;margin-bottom:2rem;"><img src="img/map.jpg" alt="오시는 길" style="width:100%;height:400px;object-fit:cover;border-radius:4px;"></div>
   <div class="location-info">
         <div class="loc-item"><label>주소</label><p>서울특별시 강남구 테헤란로 152<br>케이타워 12층 클리닉앤뷰</p></div>
         <div class="loc-item"><label>지하철</label><div class="subway-tags"><span class="subway-tag line2">2호선 강남역</span><span class="subway-tag line9">9호선 신논현역</span></div><p style="margin-top:.8rem;font-size:.83rem;color:rgba(255,255,255,.5);">강남역 11번 출구 도보 3분 · 신논현역 6번 출구 도보 5분</p></div>
@@ -678,8 +679,8 @@ function showStem(idx) {
   var desc = document.getElementById('stemDesc');
   var pts = document.getElementById('stemPoints');
   if(t) t.innerHTML = d.title;
-  if(desc) desc.textContent = d.desc;
-  if(pts) pts.innerHTML = d.points.map(function(p){return '<li>'+p+'</li>';}).join('');
+  if(desc){ desc.textContent = d.desc; desc.style.color='rgba(255,255,255,.75)'; }
+  if(pts){ pts.innerHTML = d.points.map(function(p){return '<li style="color:rgba(255,255,255,.75)">'+p+'</li>';}).join(''); }
 }
 function scrollToContact(){document.getElementById('contact').scrollIntoView({behavior:'smooth'});}
 function switchType(i){document.querySelectorAll('.btype-tab').forEach(function(t,idx){t.classList.toggle('active',idx===i);});document.querySelectorAll('.btype-panel').forEach(function(p,idx){p.classList.toggle('active',idx===i);});}
