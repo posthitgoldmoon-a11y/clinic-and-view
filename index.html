@@ -170,7 +170,7 @@ section{padding:7rem 4rem;}
 .nonsurg-inner{max-width:1300px;margin:0 auto;}
 .nonsurg-section .section-title{color:var(--white);}
 .nonsurg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:4rem;}
-.nsurg-card{background:rgba(255,255,255,.04);border:1px solid rgba(201,169,110,.15);padding:2.5rem 2rem;transition:all .4s;position:relative;overflow:hidden;}
+.nsurg-card{background:rgba(255,255,255,.04);border:1px solid rgba(201,169,110,.15);padding:0 0 2rem 0;transition:all .4s;position:relative;overflow:hidden;}
 .nsurg-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light));transform:scaleX(0);transition:transform .4s;}
 .nsurg-card:hover::after{transform:scaleX(1);}
 .nsurg-card:hover{background:rgba(255,255,255,.08);transform:translateY(-4px);}
@@ -182,7 +182,13 @@ section{padding:7rem 4rem;}
 .nsurg-price-old{font-size:.75rem;color:rgba(255,255,255,.3);text-decoration:line-through;margin-right:.4rem;}
 .stem-section{background:var(--light);}
 .stem-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
-.stem-visual{background:linear-gradient(135deg,var(--gold-light),var(--gold));height:480px;display:flex;align-items:center;justify-content:center;font-size:6rem;border-radius:4px;position:relative;overflow:hidden;}
+.stem-visual{height:auto;display:flex;flex-direction:column;gap:1rem;border-radius:4px;position:relative;overflow:hidden;}
+.stem-tabs{display:flex;gap:.8rem;flex-wrap:wrap;}
+.stem-tab{background:rgba(255,255,255,.08);border:1px solid rgba(201,169,110,.3);color:rgba(255,255,255,.7);padding:.6rem 1.4rem;font-size:.82rem;letter-spacing:.1em;cursor:pointer;border-radius:2px;transition:all .3s;font-family:var(--font-kr);}
+.stem-tab.active{background:var(--gold);color:var(--black);border-color:var(--gold);}
+.stem-panel{display:none;position:relative;}
+.stem-panel.active{display:block;}
+.stem-panel-badge{position:absolute;top:1rem;left:1rem;background:var(--gold);color:var(--black);font-size:.7rem;letter-spacing:.2em;padding:.4rem .8rem;}
 .stem-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.2),transparent 70%);}
 .stem-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2rem;}
 .stem-tag{font-size:.72rem;padding:.3rem .9rem;background:var(--white);border:1px solid rgba(201,149,110,.4);color:var(--gold);}
@@ -492,16 +498,27 @@ footer{background:#1B2340;border-top:1px solid rgba(201,149,110,.2);padding:4rem
     <div class="section-divider"></div>
     <p style="font-size:.88rem;color:rgba(255,255,255,.4);line-height:1.9;max-width:600px;">메스 없이도 충분히 아름다울 수 있습니다. 클리닉앤뷰의 비수술 라인업으로 가볍게 시작해보세요.</p>
     <div class="nonsurg-grid">
-      <div class="nsurg-card"><span class="nsurg-icon">❄️</span><h4>Micoool</h4><p class="nsurg-name-kr">미쿨 냉각지방분해</p><p>냉각 에너지로 지방세포를 선택적으로 파괴. 시술 후 즉시 일상 복귀 가능한 비침습 지방 감소 시술.</p><p class="nsurg-price"><span class="nsurg-price-old">690,000원</span>390,000원~</p></div>
-      <div class="nsurg-card"><span class="nsurg-icon">🌿</span><h4>Malavarm</h4><p class="nsurg-name-kr">말라밤 지방분해주사</p><p>식물성 활성 성분 기반 지방분해 주사. 국소 부위 집중 케어로 빠른 시간 내 효과 확인 가능.</p><p class="nsurg-price"><span class="nsurg-price-old">500,000원</span>290,000원~</p></div>
-      <div class="nsurg-card"><span class="nsurg-icon">💨</span><h4>Carboxy</h4><p class="nsurg-name-kr">카복시 셀룰라이트</p><p>이산화탄소 가스를 피하 조직에 주입해 혈액순환을 촉진, 셀룰라이트를 효과적으로 개선합니다.</p><p class="nsurg-price"><span class="nsurg-price-old">380,000원</span>190,000원~</p></div>
+      <div class="nsurg-card"><img src="img/0001.jpg" alt="미쿨" style="width:100%;height:200px;object-fit:cover;border-radius:4px 4px 0 0;margin-bottom:1.5rem;"><h4>Micoool</h4><p class="nsurg-name-kr">미쿨 냉각지방분해</p><p>냉각 에너지로 지방세포를 선택적으로 파괴. 시술 후 즉시 일상 복귀 가능한 비침습 지방 감소 시술.</p><p class="nsurg-price"><span class="nsurg-price-old">690,000원</span>390,000원~</p></div>
+      <div class="nsurg-card"><img src="img/0002.jpg" alt="말라밤" style="width:100%;height:200px;object-fit:cover;border-radius:4px 4px 0 0;margin-bottom:1.5rem;"><h4>Malavarm</h4><p class="nsurg-name-kr">말라밤 지방분해주사</p><p>식물성 활성 성분 기반 지방분해 주사. 국소 부위 집중 케어로 빠른 시간 내 효과 확인 가능.</p><p class="nsurg-price"><span class="nsurg-price-old">500,000원</span>290,000원~</p></div>
+      <div class="nsurg-card"><img src="img/0003.jpg" alt="카복시" style="width:100%;height:200px;object-fit:cover;border-radius:4px 4px 0 0;margin-bottom:1.5rem;"><h4>Carboxy</h4><p class="nsurg-name-kr">카복시 셀룰라이트</p><p>이산화탄소 가스를 피하 조직에 주입해 혈액순환을 촉진, 셀룰라이트를 효과적으로 개선합니다.</p><p class="nsurg-price"><span class="nsurg-price-old">380,000원</span>190,000원~</p></div>
       <div class="nsurg-card"><span class="nsurg-icon">✨</span><h4>Gold Fat</h4><p class="nsurg-name-kr">골드팻 하이푸</p><p>고강도 집중 초음파로 심부 지방층을 공략. 피부 탄력과 지방 감소를 동시에 케어하는 프리미엄 시술.</p><p class="nsurg-price"><span class="nsurg-price-old">850,000원</span>490,000원~</p></div>
     </div>
   </div>
 </section>
 <section class="stem-section" id="stemcell">
   <div class="stem-inner inner reveal">
-    <div class="stem-visual">🧬</div>
+    <div class="stem-visual">
+  <div class="stem-tabs">
+    <button class="stem-tab active" onclick="showStem(0)">줄기세포</button>
+    <button class="stem-tab" onclick="showStem(1)">재생의학</button>
+    <button class="stem-tab" onclick="showStem(2)">리쥬란 4CC</button>
+    <button class="stem-tab" onclick="showStem(3)">PRP</button>
+  </div>
+  <div class="stem-panel active" id="stem-0"><img src="img/stem1.jpg" onerror="this.style.display='none'" style="width:100%;height:360px;object-fit:cover;border-radius:4px;"><div class="stem-panel-badge">STEM CELL</div></div>
+  <div class="stem-panel" id="stem-1"><img src="img/stem2.jpg" onerror="this.style.display='none'" style="width:100%;height:360px;object-fit:cover;border-radius:4px;"><div class="stem-panel-badge">REGENERATIVE</div></div>
+  <div class="stem-panel" id="stem-2"><img src="img/stem3.jpg" onerror="this.style.display='none'" style="width:100%;height:360px;object-fit:cover;border-radius:4px;"><div class="stem-panel-badge">REJURAN 4CC</div></div>
+  <div class="stem-panel" id="stem-3"><img src="img/stem4.jpg" onerror="this.style.display='none'" style="width:100%;height:360px;object-fit:cover;border-radius:4px;"><div class="stem-panel-badge">PRP</div></div>
+</div>
     <div class="stem-info">
       <span class="section-label">SPECIAL TREATMENT</span>
       <h2 class="section-title">줄기세포 JUV<br>재생 프로그램</h2>
@@ -552,11 +569,12 @@ footer{background:#1B2340;border-top:1px solid rgba(201,149,110,.2);padding:4rem
     <h2 class="section-title">클리닉 시설</h2>
     <div class="section-divider"></div>
     <div class="facility-gallery">
-      <div class="fac-item"><div class="fac-img" style="background:linear-gradient(135deg,#2d2d44,#1a1a2e);color:rgba(255,255,255,.4);font-size:3rem;">🏥<span style="position:absolute;bottom:1.5rem;left:1.5rem;font-size:.85rem;color:rgba(255,255,255,.5);letter-spacing:.15em;">MAIN LOUNGE</span></div></div>
-      <div class="fac-item"><div class="fac-img" style="background:linear-gradient(135deg,#3d3020,#5a4530);color:rgba(255,255,255,.4);">🛋️<span style="position:absolute;bottom:1rem;left:1rem;font-size:.78rem;color:rgba(255,255,255,.5);letter-spacing:.1em;">VIP ROOM</span></div></div>
-      <div class="fac-item"><div class="fac-img" style="background:linear-gradient(135deg,#1e3040,#2a4560);color:rgba(255,255,255,.4);">⚕️<span style="position:absolute;bottom:1rem;left:1rem;font-size:.78rem;color:rgba(255,255,255,.5);letter-spacing:.1em;">OR SUITE</span></div></div>
-      <div class="fac-item"><div class="fac-img" style="background:linear-gradient(135deg,#2a3020,#3d4530);color:rgba(255,255,255,.4);">🔬<span style="position:absolute;bottom:1rem;left:1rem;font-size:.78rem;color:rgba(255,255,255,.5);letter-spacing:.1em;">LAB</span></div></div>
-      <div class="fac-item"><div class="fac-img" style="background:linear-gradient(135deg,#302040,#4a3060);color:rgba(255,255,255,.4);">💊<span style="position:absolute;bottom:1rem;left:1rem;font-size:.78rem;color:rgba(255,255,255,.5);letter-spacing:.1em;">RECOVERY</span></div></div>
+      <div class="fac-item"><div class="fac-img" style="position:relative;"><img src="img/11.jpg" alt="MAIN LOUNGE" style="width:100%;height:100%;object-fit:cover;"><span style="position:absolute;bottom:1rem;left:1rem;font-size:.78rem;color:#fff;letter-spacing:.15em;background:rgba(0,0,0,.5);padding:.3rem .6rem;">MAIN LOUNGE</span></div></div>
+      <div class="fac-item"><div class="fac-img" style="position:relative;"><img src="img/22.jpg" alt="VIP ROOM" style="width:100%;height:100%;object-fit:cover;"><span style="position:absolute;bottom:1rem;left:1rem;font-size:.78rem;color:#fff;letter-spacing:.15em;background:rgba(0,0,0,.5);padding:.3rem .6rem;">VIP ROOM</span></div></div>
+      <div class="fac-item"><div class="fac-img" style="position:relative;"><img src="img/33.jpg" alt="OR SUITE" style="width:100%;height:100%;object-fit:cover;"><span style="position:absolute;bottom:1rem;left:1rem;font-size:.78rem;color:#fff;letter-spacing:.15em;background:rgba(0,0,0,.5);padding:.3rem .6rem;">OR SUITE</span></div></div>
+      <div class="fac-item"><div class="fac-img" style="position:relative;"><img src="img/44.jpg" alt="LAB" style="width:100%;height:100%;object-fit:cover;"><span style="position:absolute;bottom:1rem;left:1rem;font-size:.78rem;color:#fff;letter-spacing:.15em;background:rgba(0,0,0,.5);padding:.3rem .6rem;">LAB</span></div></div>
+      <div class="fac-item"><div class="fac-img" style="position:relative;"><img src="img/55.jpg" alt="RECOVERY" style="width:100%;height:100%;object-fit:cover;"><span style="position:absolute;bottom:1rem;left:1rem;font-size:.78rem;color:#fff;letter-spacing:.15em;background:rgba(0,0,0,.5);padding:.3rem .6rem;">RECOVERY</span></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -588,7 +606,7 @@ footer{background:#1B2340;border-top:1px solid rgba(201,149,110,.2);padding:4rem
         <div class="loc-item"><label>진료 시간</label><dl class="hours-grid"><dt>평일</dt><dd>AM 10:00 — PM 7:00</dd><dt>토요일</dt><dd>AM 10:00 — PM 5:00</dd><dt>일요일·공휴일</dt><dd>휴진</dd><dt>점심 시간</dt><dd>PM 1:00 — PM 2:00</dd></dl></div>
       </div>
     </div>
-    <div class="location-map"><div class="map-placeholder"><span class="map-icon">📍</span><p style="font-size:1rem;color:rgba(255,255,255,.5);margin-bottom:.5rem;">케이타워 12층</p><p>강남구 테헤란로 152</p></div></div>
+    <div class="location-map" style="padding:0;overflow:hidden;"><img src="img/map.jpg" alt="오시는 길" style="width:100%;height:100%;object-fit:cover;"></div>
   </div>
 </section>
 <section class="contact-section" id="contact">
@@ -658,6 +676,11 @@ footer{background:#1B2340;border-top:1px solid rgba(201,149,110,.2);padding:4rem
 <script>
 window.addEventListener('load',function(){setTimeout(function(){document.getElementById('loader').classList.add('hide');},600);});
 window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);});
+
+function showStem(idx) {
+  document.querySelectorAll('.stem-tab').forEach((t,i) => t.classList.toggle('active', i===idx));
+  document.querySelectorAll('.stem-panel').forEach((p,i) => p.classList.toggle('active', i===idx));
+}
 function scrollToContact(){document.getElementById('contact').scrollIntoView({behavior:'smooth'});}
 function switchType(i){document.querySelectorAll('.btype-tab').forEach(function(t,idx){t.classList.toggle('active',idx===i);});document.querySelectorAll('.btype-panel').forEach(function(p,idx){p.classList.toggle('active',idx===i);});}
 function filterProg(cat,btn){document.querySelectorAll('.prog-tab').forEach(function(t){t.classList.remove('active');});btn.classList.add('active');document.querySelectorAll('.prog-card').forEach(function(c){c.style.display=(cat==='all'||c.dataset.cat===cat)?'block':'none';});}
