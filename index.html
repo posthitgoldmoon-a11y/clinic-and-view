@@ -194,7 +194,7 @@ section{padding:7rem 4rem;}
 .stem-tag{font-size:.72rem;padding:.3rem .9rem;background:var(--white);border:1px solid rgba(201,149,110,.4);color:var(--gold);}
 .stem-desc{font-size:.88rem;color:var(--gray);line-height:1.9;margin-bottom:2rem;}
 .stem-points{list-style:none;}
-.stem-points li{font-size:.85rem;color:var(--black);padding:.6rem 0;border-bottom:1px solid #eee;display:flex;align-items:center;gap:.8rem;}
+.stem-points li{font-size:.85rem;color:rgba(255,255,255,.85);padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:.8rem;}
 .stem-points li::before{content:"✦";color:var(--gold);font-size:.7rem;flex-shrink:0;}
 .events-section{background:var(--white);}
 .events-inner{max-width:1300px;margin:0 auto;}
@@ -247,7 +247,7 @@ section{padding:7rem 4rem;}
 .faq-item.open .faq-a{max-height:300px;padding-bottom:1.5rem;}
 .faq-a p{font-size:.85rem;color:var(--gray);line-height:1.9;padding-left:1.5rem;border-left:2px solid var(--gold);}
 .location-section{background:var(--black);}
-.location-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
+.location-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
 .location-section .section-title{color:var(--white);}
 .location-map{background:rgba(255,255,255,.05);border:1px solid rgba(201,169,110,.2);height:400px;display:flex;align-items:center;justify-content:center;border-radius:4px;}
 .map-placeholder{text-align:center;color:rgba(255,255,255,.3);}
@@ -571,7 +571,7 @@ footer{background:#1B2340;border-top:1px solid rgba(201,149,110,.2);padding:4rem
       <h2 class="section-title">오시는 길</h2>
       <div class="section-divider"></div>
       
-  <div class="location-map" style="padding:0;overflow:hidden;margin-bottom:2rem;"><img src="img/map.jpg" alt="오시는 길" style="width:100%;height:400px;object-fit:cover;border-radius:4px;"></div>
+  <div style="position:relative;border-radius:8px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4);"><img src="img/map.jpg" alt="오시는 길" style="width:100%;height:420px;object-fit:cover;display:block;"><div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,rgba(10,10,20,.6) 100%);pointer-events:none;"></div><div style="position:absolute;bottom:1.5rem;left:1.5rem;"><span style="background:var(--gold);color:var(--black);font-size:.72rem;letter-spacing:.2em;padding:.4rem .8rem;font-weight:600;">케이타워 12층</span></div></div>
   <div class="location-info">
         <div class="loc-item"><label>주소</label><p>서울특별시 강남구 테헤란로 152<br>케이타워 12층 클리닉앤뷰</p></div>
         <div class="loc-item"><label>지하철</label><div class="subway-tags"><span class="subway-tag line2">2호선 강남역</span><span class="subway-tag line9">9호선 신논현역</span></div><p style="margin-top:.8rem;font-size:.83rem;color:rgba(255,255,255,.5);">강남역 11번 출구 도보 3분 · 신논현역 6번 출구 도보 5분</p></div>
